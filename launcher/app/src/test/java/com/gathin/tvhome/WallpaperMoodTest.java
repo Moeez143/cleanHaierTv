@@ -26,12 +26,14 @@ public class WallpaperMoodTest {
     }
 
     @Test
-    public void timeOfDayFollowsSunriseNoonAndDusk() {
+    public void timeOfDayFollowsSunriseSunsetAndDusk() {
         assertEquals(WallpaperMood.NIGHT, at(0, 30));
         assertEquals(WallpaperMood.NIGHT, at(7, 19));
         assertEquals(WallpaperMood.MORNING, at(7, 20));
         assertEquals(WallpaperMood.MORNING, at(11, 59));
-        assertEquals(WallpaperMood.EVENING, at(12, 0));
+        assertEquals(WallpaperMood.MORNING, at(12, 0));
+        assertEquals(WallpaperMood.MORNING, at(16, 49));
+        assertEquals(WallpaperMood.EVENING, at(16, 50));
         assertEquals(WallpaperMood.EVENING, at(18, 49));   // half an hour after sunset is still evening
         assertEquals(WallpaperMood.NIGHT, at(18, 50));
         assertEquals(WallpaperMood.NIGHT, at(23, 59));

@@ -5,10 +5,12 @@ This repository preserves one personal CleanYourTV configuration for a Haier Mat
 ## What this copy adds
 
 - [`examples/haier-matrixtv-be/debloat.txt`](../examples/haier-matrixtv-be/debloat.txt): nine TV packages disabled on the tested set, with keep and restore notes.
-- [`haier/theme/config.json`](../haier/theme/config.json): Scenes wallpapers, frosted dock, four apps, Live TV button and quick settings gear mappings.
-- `launcher/app/src/main/java/com/gathin/tvhome/MainActivity.java`: the Home Settings chip respects `settings_key_panel` and opens `QuickSettingsActivity` when that setting is true. This one-line fix was installed and verified on the original local launcher; this repository applies it to the newer upstream source.
+- [`haier/theme/config.json`](../haier/theme/config.json): Scenes wallpapers grouped by daytime, sunset and night, a frosted six-slot dock with four pinned apps, and the Live TV and quick settings remote mappings.
+- `launcher/app/src/main/java/com/gathin/tvhome/MainActivity.java`: the Home Settings chip opens the same quick panel as the physical gear, and the Home header shows current weather. The panel is placed below the Settings chip.
 
 This repository keeps CleanYourTV's source, Git history, and MIT license. The model example was also submitted upstream as [PR #2964](https://github.com/Gathin23/cleanyourtv/pull/2964). The private original-state backup remains only on the owner's computer.
+
+The optional weather line uses [Open-Meteo](https://open-meteo.com/) while Home is visible. It refreshes every 30 minutes and retains the last successful result when offline. The app needs `INTERNET` permission for this personal-fork feature; the upstream reference launcher remains unchanged. Set `weather_city`, `latitude`, and `longitude` in `launcher/app/src/main/res/values/config.xml` locally before building. They are blank in this public repository to keep the owner's location private, so the weather line stays hidden until configured. The TV already has its own configured build.
 
 ## Remote key findings
 

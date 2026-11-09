@@ -19,7 +19,8 @@ final class WallpaperMood {
     static final String[] ALL = {MORNING, EVENING, NIGHT};
     /** Sunrise and sunset in minutes of the day, without a place (or where the sun does not rise or set that day). */
     static final int DEFAULT_SUNRISE = 7 * 60, DEFAULT_SUNSET = 18 * 60 + 30;
-    private static final int NOON = 12 * 60;
+    /** Switch to sunset scenes shortly before sunset, rather than showing them at midday. */
+    private static final int SUNSET_LEAD_MINUTES = 90;
     /** Evening lasts this long after sunset, while the sky still glows. */
     private static final int DUSK_MINUTES = 30;
 
@@ -28,8 +29,8 @@ final class WallpaperMood {
 
     /** The mood at this minute of the day, for a sunrise and sunset in minutes of the day. */
     static String timeOfDay(int minute, int sunrise, int sunset) {
-        if (minute >= sunrise && minute < NOON) return MORNING;
-        if (minute >= NOON && minute < sunset + DUSK_MINUTES) return EVENING;
+        if (minute >= sunrise && minute < sunset - SUNSET_LEAD_MINUTES) return MORNING;
+        if (minute >= sunset - SUNSET_LEAD_MINUTES && minute < sunset + DUSK_MINUTES) return EVENING;
         return NIGHT;
     }
 

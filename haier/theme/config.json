@@ -7,13 +7,36 @@
     "com.google.android.youtube.tv",
     "com.spotify.tv.android"
   ],
-  "columns": 4,
-  "fill_dock": false,
+  "columns": 6,
+  "fill_dock": true,
   "live_tv_package": "com.mediatek.wwtv.tvcenter",
   "settings_key_panel": true,
   "app_keys": [
     "scan:225:com.mediatek.wwtv.tvcenter",
     "KEYCODE_NOTIFICATION:com.gathin.tvhome/.QuickSettingsActivity"
   ],
-  "dock_glass": true
+  "dock_glass": true,
+  "sky_intensity": 45,
+  "wallpaper_moods": {
+    "morning": [
+      "05-dunes.jpg",
+      "07-mirror-lake.jpg",
+      "08-tea-hills.jpg",
+      "11-balloon-sunrise.jpg",
+      "12-monsoon.jpg",
+      "13-lighthouse-coast.jpg"
+    ],
+    "evening": [
+      "01-dusk-peaks.jpg",
+      "02-golden-coast.jpg",
+      "06-above-the-clouds.jpg",
+      "09-alpenglow.jpg",
+      "14-autumn-valley.jpg"
+    ],
+    "night": [
+      "03-moon-lake.jpg",
+      "04-aurora.jpg",
+      "10-city-lights.jpg"
+    ]
+  }
 }
